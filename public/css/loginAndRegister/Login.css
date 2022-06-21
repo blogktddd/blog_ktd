@@ -28,6 +28,7 @@ body{
 }
 
 .brand-logo{
+  margin-left: -7rem;
   width: 20rem;
   height: 30rem;
   background-repeat: no-repeat;
