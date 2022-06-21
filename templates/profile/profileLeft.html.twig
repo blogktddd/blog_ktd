@@ -1,0 +1,59 @@
+{% block profile_Left %}
+<div class="profile-Left">
+    <div class="header-profile">
+        <div class="avatar-profile">
+            <img src="/image/post/{{ inforUser[0].avatar }}" alt="avatar">
+            {% if inforUser[0].id == app.user.id %}
+                <div id="btn_change_avatar_profile" data-bs-toggle="modal" data-bs-target="#change_avatar_model">Change avatar</div>
+            {% endif %}
+        </div>
+        <div class="short-information-profile">
+            <div class="user-name-profile">
+                <h4>{{ inforUser[0].fullname }}</h4>
+            </div>
+            <div class="infor-profile-item" id="count_posts" data-user-id="{{ inforUser[0].id }}"><p>Pots: {{ inforUser[0].total_post }}</p></div>
+            <div class="infor-profile-item" id="count_friend" data-user-id="{{ inforUser[0].id }}"><p>Friends: {{ inforUser[0].total_friend }}</p></div>
+        </div>
+        {% if inforUser[0].id != app.user.id %}
+            {% if friendStatus[0]['friendStatus'] == 0 %}
+                <div class="infor-profile-item" id="send_invite_friend" data-user-id="{{ inforUser[0].id }}"><p>Add friend</p></div>
+            {% elseif friendStatus[0]['friendStatus'] == 1 %}
+                {% if friendStatus[0]['friend_id'] == app.user.id %}
+                    <div class="send_request" id="btn_accept_invite_friend" data-sender-id="{{ inforUser[0].id }}">
+                        <p>Accept</p>
+                        <div><i class="bi-arrow-right-short"></i></div>
+                    </div>
+                {% else %}
+                    <div class="send_request">
+                        <p>Send request</p>
+                        <div><i class="bi-arrow-right-short"></i></div>
+                    </div>
+                {% endif %}
+            {% elseif friendStatus[0]['friendStatus'] == 2 %}
+                <button type="button" class="send_request" id="btn_unfriend" data-friend-id="{{ inforUser[0].id }}"  data-bs-toggle="modal" data-bs-target="#comfirm_unfriend_profile">
+                    <p>Unfirend</p><div><i class="bi-check-lg"></i></div>
+                </button>
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="detail-information">
+        {% if inforUser[0].id == app.user.id %}
+        <div class="btn-new-post" data-bs-toggle="modal" data-bs-target="#new_post_model">
+            <p>New Post</p><i class="bi-file-earmark-plus"></i>
+        </div>
+        <a href="/updateInformation">
+            <div class="btn-setting-profile">
+                <p>Update Information</p><i class="bi-gear"></i>
+            </div>
+        </a>
+        {% endif %}
+        <hr>
+        <div class="block-information-profile">
+            <div class="detail-infor-item">Phone: {{ inforUser[0].phone }}</div>
+            <div class="detail-infor-item">Gender: {{ inforUser[0].gender }}</div>
+            <div class="detail-infor-item">Address: {{ inforUser[0].address  }}</div>
+            <div class="detail-infor-item">Email: {{ inforUser[0].email }} </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

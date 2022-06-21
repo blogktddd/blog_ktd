@@ -1,0 +1,257 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: rgb(240, 242, 245);
+}
+
+.brand-text-login{
+  width: 12rem;
+  height: 12rem;
+  background-image: url(../../image/decorate/brand-text-login.png);
+  transform: translateY(5rem);
+  z-index: 0;
+}
+
+.register-form{
+  display: none;
+}
+
+.login-form{
+  display: block;
+}
+
+.brand{
+  position: relative;
+  width: 40rem;
+  height: 20rem;
+  display: inline-block;
+  float: left;
+  left: 22rem;
+  top: 12rem;
+}
+
+.brand-logo{
+  background-image: url("../../image/decorate/bird-2.png");
+  width: 14rem;
+  height: 14rem;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-size: 12rem 12rem;
+  z-index: 1;
+}
+
+.animation-brand-logo{
+  animation-name: change-status-bird;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  /*animation-iteration-count: infinite;*/
+}
+
+@keyframes change-status-bird {
+  0% { background-image: url("../../image/decorate/bird-2.png");}
+  10% { background-image: url("../../image/decorate/logo2.png");}
+  90% { background-image: url("../../image/decorate/logo2.png");}
+  100% { background-image: url("../../image/decorate/logo.png");}
+}
+
+
+.title-login:hover{
+  cursor: pointer;
+}
+
+.title-sign-up:hover{
+  cursor: pointer;
+}
+
+.signin {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+
+.active {
+  border-bottom: 2px solid black;
+}
+
+.nonactive {
+  color: rgba(255, 255, 255, 0.2);
+}
+.nonactive:hover
+{
+  border-bottom: 2px solid #1161ed;
+}
+
+.login {
+  border-radius:  1rem;
+  position: relative;
+  height: 30rem;
+  width: 28rem;
+  float: right;
+  top:3rem;
+  right: 3rem;
+  padding: 60px 60px;
+  background-color: rgb(71, 167, 175);
+  color: white;
+  box-shadow: 0 0 1rem rgb(0,66,67);
+}
+
+form {
+  padding-top: 16px;
+}
+
+
+
+h2 {
+  padding-left: 12px;
+  font-size: 22px;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  letter-spacing: 2px;
+  display: inline-block;
+  font-weight: 100;
+}
+
+h2:first-child {
+  padding-left: 0;
+}
+.text {
+  color: black!important;
+  border: none;
+  width: 89%;
+  padding: 10px 20px;
+  display: block;
+  height: 15px;
+  border-radius: 20px;
+  background: rgba(227, 234, 239, 1);
+  overflow: hidden;
+  margin-top: 15px;
+  transition: all 0.5s ease-in-out;
+}
+
+.text:focus {
+  outline: 0;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  background: rgba(0, 56, 68, 1);
+  color: white!important;
+}
+
+
+
+input[type="text"],
+input[type="password"] {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+
+
+input {
+  display: inline-block;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+
+
+label {
+  display: inline-block;
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+.signin {
+  background-color: #1161ed;
+  color: #FFF;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  margin-top: 30px;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+}
+
+.signin:hover {
+  background: #4082f5;
+  box-shadow: 0px 4px 35px -5px #4082f5;
+  cursor: pointer;
+}
+
+.signin:focus {
+  outline: none;
+}
+
+hr {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  top: 85px;
+  position: relative;
+}
+
+a {
+  text-align: center;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+#register_form_gender_1,
+#register_form_gender_0{
+  width: 1rem;
+  height: 1rem;
+  margin-left: 5rem;
+}
+
+#register_form_gender_1,
+#register_form_gender_0:hover{
+  cursor: pointer;
+}
+
+#register_form_Resister{
+  background-color: #1161ed;
+  color: #FFF;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  margin-top: 30px;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+}
+
+#register_form_Resister:hover{
+  background: #4082f5;
+  box-shadow: 0px 4px 35px -5px #4082f5;
+  cursor: pointer;
+}
+
+.signup{
+  background-color: #1161ed;
+  color: #FFF;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  margin-top: 30px;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+}
+
+.signup:hover {
+  background: #4082f5;
+  box-shadow: 0px 4px 35px -5px #4082f5;
+  cursor: pointer;
+}

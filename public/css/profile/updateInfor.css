@@ -1,0 +1,77 @@
+.root-profile-update-infor{
+    background-color: rgb(240, 242, 245);
+    width: 50rem;
+    height: 46rem;
+    padding-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    font-family: inherit;
+}
+
+.form-update-infor{
+    background-color: white;
+    width: 100%;
+    height: 49rem;
+    border-radius: 1rem;
+}
+
+.form-update-infor p{
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: initial;
+
+}
+
+.form-update-infor form label{
+    float: left;
+    margin-left: 1rem;
+    display: block;
+}
+
+.form-update-infor form div{
+    text-align: center;
+    height: 5rem;
+}
+
+.infor-item{
+    border: 1px solid;
+    outline: none;
+    border-radius: 0.3rem;
+    width: 34rem;
+    padding-left: 1rem;
+}
+
+#update_profile_form_birthdate{
+    transform: translateX(1rem);
+}
+
+#update_profile_form_save{
+    border: none;
+    background-color: rgb(102, 169, 177);
+    padding: 0!important;
+}
+
+#update_profile_form_save:hover{
+    background-color: rgb(0, 56, 68);
+    color: white;
+}
+
+#update_profile_form_gender label{
+    transform: translate(-2rem, 0rem);
+    margin-left: 8rem;
+}
+
+#update_profile_form_gender #update_profile_form_gender_0{
+    transform: translate(-16rem, 0.1rem);
+}
+
+#update_profile_form_gender #update_profile_form_gender_1{
+    transform: translate(-6rem, 0.1rem);
+}
+
+#update_profile_form_gender #update_profile_form_gender_0,
+#update_profile_form_gender #update_profile_form_gender_1:hover{
+    cursor: pointer;
+}

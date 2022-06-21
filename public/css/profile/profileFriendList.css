@@ -1,0 +1,35 @@
+.friend-list-profile{
+    width: 77rem;
+    min-height: 50rem;
+    background-color: white;
+    display: block;
+    border-radius: 1rem;
+    box-shadow: 0 2px 6px grey;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.friend-in-list-profile{
+    width: 17rem;
+    height: 5rem;
+    background-color: rgba(102, 169, 177, .4);
+    border-radius: 1rem;
+    display: inline-block;
+    margin: 1rem;
+    padding: .5rem;
+}
+
+.friend-in-list-profile:hover{
+    cursor: pointer;
+    background-color: rgb(102, 169, 177);
+}
+
+.friend-in-list-profile img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2rem;
+}
+
+.friend-in-list-profile div{
+    display: inline-block;
+}

@@ -1,0 +1,76 @@
+<div class="home-main" id="root-post">
+    {% for post in posts %}
+        <div class="post-home post-home-custom" id="post_id_{{ post['id'] }}">
+            <div class="post-header-home">
+                <div class="avatar-post-home">
+                    <img src="{{ asset(image_dir ~ post.avatar) }}" alt="avatar">
+                </div>
+                <div class="user-name-and-time-post-home">
+                    <a href=""><div><h5>{{ post['fullname'] }}</h5></div></a>
+                    <div>{{ post['upload_time'] }}</div>
+                </div>
+                {% if app.user.id == post.ownerPost or app.user.roles[0] == 'ROLE_ADMIN' %}
+                    <div class="option-post-home dropstart">
+                        <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div><i class="bi-three-dots"></i></div>
+                        </button>
+                        <ul class="dropdown-menu tab-option-post-home" style="text-align: center;">
+                                <button type="button" class="item-option-post-home delete-option-post-profile" data-post-id="{{ post['id'] }}" data-bs-toggle="modal" data-bs-target="#comfirm_delete_post_profile" >
+                                    Delete
+                                    <i class="bi-trash3-fill"></i>
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="caption-post-home">
+                <p>
+                    {{ post['caption'] }}
+                </p>
+            </div>
+            <div class="post-body-home">
+                <div class="img-post-home">
+                    {% if post['image'] != '' %}
+                        <img src="{{ asset('image/post/' ~  post['image'] ) }}" alt="img-post">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="post-footer-home">
+                <hr class="separator-comment-with-post-home" style="margin: 0; margin-left: 2rem">
+                <div class="tym-block-post-home">
+                    <div class="tym-post-home">
+                        <i class="bi-heart-fill{% for liked in postLiked %}{% if post['id'] == liked['liked'] %} has-tym{% endif %}{% endfor %} icon-tym-post-home" data-post-id="{{ post['id'] }}"></i>
+                    </div>
+                    <div class="count-tym-post-home" id="count_tym_post_id_{{ post['id'] }}">{{ post['total_like'] }}</div>
+                </div>
+                <div class="comment-block-post-home">
+                    <div class="comment-post-home" data-post-id="{{ post['id'] }}"><i class="bi-chat-right-dots"></i></div>
+                    <div class="count-comments-post-home" id="count_comment_post_{{ post['id'] }}">{{ post['total_comment'] }}</div>
+                </div>
+            </div>
+            <div class="user-comments-home" id="comment_post_{{ post['id'] }}">
+                <hr class="separator-comment-with-post-home">
+                <div class="comment-box-post-home">
+                    <div class="avatar-post-home">
+                        <img src="{{ asset( image_dir ~ inforNavBar[0].avatar ) }}" alt="avatar">
+                    </div>
+                    <input type="text" class="txt_comment_post_home" data-post-id="{{ post['id'] }}" id="txt_comment_post_home_{{ post['id'] }}" placeholder="  comment...">
+                    <div class="btn-send-comment-post" data-btn-send-comment-id="{{ post['id'] }}" ><i class="bi-send-fill"></i></div>
+                </div>
+                {% for comment in comments %}
+                    {% if comment.post_id ==  post['id']  %}
+                        <div class="other-user-comment">
+                            <div class="avatar-other-user-home">
+                                <img src="{{ asset( image_dir ~ comment.avatar) }}" alt="avatar">
+                            </div>
+                            <div class="comment-content-post">
+                                <h5 class="full-name-user-comment" data-user-id="{{ comment.id  }}">{{ comment.fullname }}</h5>
+                                <p>{{ comment.comment_content }}</p>
+                                <div class="time-comment-post-home">{{ comment.upload_time }}</div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>

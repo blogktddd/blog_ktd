@@ -1,0 +1,352 @@
+body{
+    background-color: rgb(240, 242, 245);
+}
+
+.overplay-max-size-avatar{
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.root-body-home{
+    width: 92rem;
+    min-height: 50rem;
+    padding-top: 5rem;
+    background-color: rgb(240, 242, 245);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.home-main{
+    width: 40rem;
+    min-height: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(240, 242, 245);
+}
+
+.post-home-custom{
+    margin-left: 2.3rem;
+}
+
+.post-home{
+    margin-bottom: 1rem;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    box-shadow: 0 2px 6px grey;
+    border-radius: 1rem;
+}
+
+.post-header-home{
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.avatar-post-home{
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.avatar-post-home img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5rem;
+}
+
+.user-name-and-time-post-home {
+    margin-left: 0.6rem;
+    transform: translateY(13px);
+    display: inline-block;
+}
+
+.user-name-and-time-post-home div{
+    width: fit-content;
+}
+
+.user-name-and-time-post-home div h5{
+    margin: 0;
+}
+
+.user-name-and-time-post-home a{
+    text-decoration: none;
+    color: black;
+}
+
+.user-name-and-time-post-home a:hover{
+    text-decoration: underline;
+    color: rgb(102, 167, 175);
+}
+
+.option-post-home{
+    float: right;
+    transform: translateY(16px);
+    text-align: center;
+    display: inline-block;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 4rem;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1rem;
+    font-size: 2rem;
+    color: black;
+}
+
+.item-option-post-home{
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.item-option-post-home:hover{
+    background-color: black;
+    cursor: pointer;
+    color: white;
+}
+
+.option-post-home:hover{
+    background-color: rgba(58, 59, 60, .2);
+    cursor: pointer;
+    color: white;
+}
+
+.option-post-home div{
+    transform: translateY(-10px);
+}
+
+.option-post-home button{
+    background-color: transparent;
+    border: none;
+}
+
+.tab-option-post-home{
+    background-color: rgb(227, 237, 241);
+}
+
+.tab-option-post-home .dropdown-item {
+    font-family: inherit;
+    font-size: larger;
+    text-align: center;
+}
+.tab-option-post-home .dropdown-item:hover{
+    background-color: rgb(194, 202, 205);
+}
+
+.tab-option-post-home .dropdown-item i{
+    margin-left: 1rem;
+}
+
+.caption-post-home{
+    height: fit-content;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 0.5rem;
+}
+
+.caption-post-home p{
+    margin: 0;
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    word-break: break-word;
+    text-align: justify;
+    margin-right: 1rem;
+
+}
+
+.post-body-home{
+    width: 100%;
+    height: fit-content;
+}
+
+.img-post-home{
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-post-home img{
+    width: 100%;
+    height: auto;
+
+}
+
+
+.post-footer-home{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0 0 1rem 1rem;
+    padding-bottom: 1rem;
+}
+
+.post-footer-home div{
+    display: inline-block;
+}
+
+.tym-post-home{
+    margin-left: 3rem;
+    transform: translateY(6px);
+    border-radius: 1rem;
+}
+
+.tym-post-home:hover{
+    cursor: pointer;
+    background-color: rgba(58, 59, 60, .2);
+}
+
+.has-tym{
+    color: red!important;
+}
+
+.tym-post-home i{
+    font-size: 2rem;
+    padding: .5rem;
+}
+
+.count-tym-post-home{
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+
+.count-tym-post-home:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.comment-block-post-home{
+    float: right;
+}
+
+.comment-post-home{
+    font-size: 2rem;
+    margin-right: 1rem;
+    transform: translateY(6px);
+    border-radius: 1rem;
+}
+
+.comment-post-home i{
+    padding: .5rem;
+}
+
+.comment-post-home:hover{
+    cursor: pointer;
+    background-color: rgba(58, 59, 60, .2);
+}
+
+.count-comments-post-home{
+    margin-right: 3rem;
+    font-size: 1.2rem;
+}
+
+.count-comments-post-home:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.user-comments-home{
+    margin-top: -2rem;
+    min-height: 7rem;
+    height: fit-content;
+    width: 100%;
+    padding-top: 1rem;
+    background-color: rgb(255,255,255);
+    display: none;
+    border-radius: 0 0 1rem 1rem;
+    padding-bottom: 1rem;
+}
+
+.separator-comment-with-post-home{
+    height: 1px;
+    width: 36rem;
+    margin-left: 2rem;
+}
+
+.avatar-other-user-home{
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.avatar-other-user-home img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5rem;
+}
+
+.txt_comment_post_home{
+    border-radius: 1rem;
+    width: 31rem;
+    height: 3rem;
+    vertical-align: bottom;
+    border: none;
+    background-color: rgba(58, 59, 60, .2);
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+.txt_comment_post_home:focus-visible{
+    outline-color: rgb(102, 167, 175);
+}
+
+.btn-send-comment-post{
+    display: inline-block;
+    font-size: 2rem;
+    margin-left: .5rem;
+    vertical-align: middle;
+}
+
+.btn-send-comment-post:hover{
+    color: rgb(102, 167, 175);
+    cursor: pointer;
+}
+
+.other-user-comment{
+    margin-top: 1rem;
+}
+
+.comment-content-post{
+    height: fit-content;
+    width: fit-content;
+    max-width: 34rem;
+    min-width: 12rem;
+    /*background-color: rgb(255, 255, 255);*/
+    padding-bottom: 0.5rem;
+    background-color: rgb(216, 216, 216);
+    display: inline-block;
+    border-radius: 1rem;
+}
+
+.comment-content-post h5{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-top: .5rem;
+    width: fit-content;
+}
+
+.comment-content-post h5:hover{
+    text-decoration: underline;
+    color: rgb(102, 167, 175);
+    cursor: pointer;
+}
+
+.comment-content-post p{
+    margin: 0;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    word-break: break-word;
+    text-align: justify;
+    margin-right: 1rem;
+}
+
+.time-comment-post-home{
+    float: right;
+    margin-right: .7rem;
+    font-size: smaller;
+    color: gray;
+}

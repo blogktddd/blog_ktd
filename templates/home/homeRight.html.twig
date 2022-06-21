@@ -1,0 +1,20 @@
+<div class="home-right">
+    <div class="header-right-block">
+        <div class="title-right-block"><i class="bi-chat-heart"></i><div style="font-style: initial;font-size: 1.5rem;display: inline-block;margin-left: 5rem;">List Friend</div></div>       
+    </div>
+    <div class="overflow-auto body-right-block">
+        {% for friend in friendList %}
+            <div class="friend-in-list" data-friend-id="{{ friend.id }}">
+                <div class="avatar-friend-in-list" data-id=""><img src="{{ asset(image_dir ~ friend.avatar) }}" alt="avatar"></div>
+                <div class="name-friend-in-list">{{ friend.fullname }}</div>
+
+                {% if friend.login_status == 'online' %}
+                    <span class="bi-circle-fill status-friend-in-list" style="color: forestgreen"></span>
+                {% else %}
+                    <span class="bi-circle-fill status-friend-in-list" style="color: red"></span>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+

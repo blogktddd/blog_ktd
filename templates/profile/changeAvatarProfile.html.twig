@@ -1,0 +1,36 @@
+
+<!-- Modal -->
+<div class="modal fade" id="change_avatar_model" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-custom-new-post">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Change Avatar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btn_close_table_new_post"></button>
+            </div>
+            <form method="post" action="{{ path('app_change_avatar') }}" enctype="multipart/form-data" id="change_avatar_form">
+                <div class="modal-body new-post-table-body">
+                    <div class="new-post-table">
+                        <div class="img-post-in-table">
+                            <div class="btn-add-img-post-in-table" id="btn_add_img_change_avatar_in_table">Add image</div>
+                            <div class="btn-add-img-post-in-table" id="btn_delete_preview_img_avatar_in_table">Delete</div>
+                            <input type="file" id="input_up_img_avatar" name="imgAvatar" hidden>
+                            <input type="text" name="userId" hidden value="{{ inforUser[0].id }}">
+                            <img src="" alt="" id="img_preview_atavar">
+                        </div>
+                        <div class="caption-post-in-table">
+                            <textarea placeholder="write something..." name="captionChangeAvatar" id="caption_change_avatar_in_table" cols="30" rows="10" class="text-area-caption-in-table">{% if caption != '' %}{{ caption }}{% endif %}</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="error-message" id="error_change_avatar" style="transform: translateX(-20rem); color: red">
+                        {% if error %}
+                            Only accept image
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="btn_submit_change_avatar">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

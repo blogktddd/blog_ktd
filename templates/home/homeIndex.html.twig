@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} KTD Blog {% endblock %}
+
+{% block body %}
+        <div class="root-body-home">
+        {{ include('profile/confirmDeletePostProfile.html.twig') }}
+            {{ include('home/homeLeft.html.twig') }}
+             {{ include('home/homeRight.html.twig') }} 
+             {{ include('home/homeMain.html.twig') }} 
+        </div>
+{% endblock %}

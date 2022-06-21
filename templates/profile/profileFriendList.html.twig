@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Friend List{% endblock %}
+
+{% block body %}
+    <div class="root-body-profile">
+{#        {{ include('profile/profileLeft.html.twig') }}#}
+        <div class="friend-list-profile">
+            {% for friend in friendList %}
+                <div class="friend-in-list-profile" data-user-id="{{ friend['id'] }}">
+                    <div class="avatar-friend-in-list-profile">
+                        <img src="{{ asset(image_dir ~ friend['avatar']) }}" alt="avatar">
+                    </div>
+                    <div class="name-friend-in-list-profile"><p>{{ friend['fullname'] }}</p></div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="{{ asset('image/decorate/logo.png') }}" sizes="128x128">
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+                  rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+                  crossorigin="anonymous">
+            <link rel="stylesheet" href="{{ asset('css/home/homeHeader.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/home/homeMain.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/home/homeRight.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/home/homeLeft.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/profile/profileMain.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/profile/profileLeft.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/profile/profileFriendList.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/profile/newPostTable.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/profile/updateInfor.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/home/userListFound.css') }}">
+        {% endblock %}
+    </head>
+    <body>
+    {% block navigation %}
+        <div class="nav-header-box">
+            <nav class="navbar nav-header-custom">
+                <div class="container-fluid">
+                    <a class="navbar-brand brand" href="/home">
+                        <img src="{{ asset('image/decorate/logo.png') }}" alt="logo" id="logo">
+                    </a>
+                    <div class="brand-text"></div>
+                    <div class="navbar-nav-custom">
+                        <ul class="ul-home-header">
+                            <li class="nav-item nav-item-header-custom">
+                                <a class="nav-link-header" href="/home"><i class="bi-house icon-nav-header"></i></a>
+                            </li>
+                            <li class="nav-item nav-item-header-custom" id="post_notification">
+                                <a class="nav-link-header">
+                                    <i class="bi-bell icon-nav-header">
+                                        {% if countlikeAndComment > 0 %}
+                                            <span class="count-notification-post">{{ countlikeAndComment }}</span>
+                                        {% endif %}
+                                    </i>
+                                </a>
+                                <div class="overflow-auto post-notification-table">
+                                    {% for likeAndComment in likeAndCommentDetail %}
+                                        <div class="item-post-notification-table">
+                                            <p>{{ likeAndComment['fullname'] }}
+                                                {% if likeAndComment['type'] == 'like' %}
+                                                    has liked your post
+                                                {% else %}
+                                                    has comment your post
+                                                {% endif %}
+                                            </p>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </li>
+                            <li class="nav-item nav-item-header-custom" id="friend_notification">
+                                <a class="nav-link-header">
+                                    <i class="bi-person-plus icon-nav-header">
+                                        {% if countInviteFriend[0].invite_friend_request > 0 %}
+                                            <span class="count-notification-friend">{{ countInviteFriend[0].invite_friend_request }}</span>
+                                        {% endif %}
+                                    </i>
+                                </a>
+                                <div class="overflow-auto friend-notification-table">
+                                    {% for inviteFriend in inviteFriendDetail %}
+                                        <div class="item-friend-notification-table" data-sender-id="{{ inviteFriend['sender_id'] }}">
+                                            <p>{{ inviteFriend['fullname'] }}
+                                                has send request friend
+                                            </p>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </li>
+                            <li class="nav-item nav-item-header-custom">
+                                <a class="nav-link-header" href="{{ path('app_process_logout') }}"><i class="bi-box-arrow-right icon-nav-header"></i></a>
+                            </li>
+                            <li class="nav-item nav-item-header-custom">
+                                <a class="" href="/profile/{{ inforNavBar[0].id }}">
+                                    <img src="{{ asset( image_dir ~ inforNavBar[0].avatar ) }}" alt="" class="icon-nav-header img-avatar-header">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    {% endblock %}
+    {% block body %}
+
+    {% endblock %}
+    </body>
+    {% block javascripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="{{ asset('js/home/home.js') }}"></script>
+        <script src="{{ asset('js/profile/inforProfile.js') }}"></script>
+        <script src="{{ asset('js/profile/upLoadPost.js') }}"></script>
+        <script src="{{ asset('js/profile/changeAvatar.js') }}"></script>
+        <script src="{{ asset('js/optionPost/optionOfPost.js') }}"></script>
+        <script src="{{ asset('js/likeAndComment/likeAndComment.js') }}"></script>
+        <script src="{{ asset('js/profile/addFriend.js') }}"></script>
+    {% endblock %}
+    {% block WebSocket %}
+    {% endblock %}
+</html>

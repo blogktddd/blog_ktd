@@ -1,0 +1,80 @@
+.modal-dialog-custom-new-post{
+    max-width: 60rem;
+}
+
+.new-post-table-body{
+
+}
+
+.new-post-table{
+    width: fit-content;
+    height: fit-content;
+}
+
+.img-post-in-table{
+    width: 30rem;
+    height: 30rem;
+    background-color: white;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 1rem;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.img-post-in-table img{
+    transform: translateY(-6rem);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    display: none;
+    object-fit: contain;
+}
+
+.btn-add-img-post-in-table{
+    width: 8rem;
+    background-color: rgba(128, 128, 128, .3);
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    height: 2rem;
+    transform: translateY(13rem);
+    padding: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.btn-add-img-post-in-table:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+
+.caption-post-in-table{
+    width: 27rem;
+    height: 30rem;
+    display: inline-block;
+}
+
+.text-area-caption-in-table{
+    border: 1px solid black;
+    min-width: 28rem;
+    max-width: 28rem;
+    min-height: 480px;
+    max-height: 480px;
+    height: 503px;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.text-area-caption-in-table:focus-visible{
+    outline: none;
+}
+
+#report_caption{
+   margin-left: 15rem;
+}
+

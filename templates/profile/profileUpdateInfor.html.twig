@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Update Information {% endblock %}
+
+{% block body %}
+    <div class="root-profile-update-infor">
+        <div class="form-update-infor">
+            <p>Update Information</p>
+            {{ form_start(updateInforForm) }}
+            {{ form_end(updateInforForm) }}
+            <div class="erro-mess-update-infor-profile">
+                {% for error in errorUpdateInfor %}
+                    {% if error.propertyPath ==  'fullname' %}
+                        {{ error.message }}
+                    {% endif %}
+                    {% if error.propertyPath ==  'email' %}
+                        {{ error.message }}
+                    {% endif %}
+                    {% if error.propertyPath ==  'phone' %}
+                        {{ error.message }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

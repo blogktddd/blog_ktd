@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="root-body-profile">
+        {{ include('profile/changeAvatarProfile.html.twig') }}
+        {{ include('profile/newPostTable.html.twig') }}
+        {{ include('profile/confirmDeletePostProfile.html.twig') }}
+        {{ include('profile/confirmUnfriendProfile.html.twig') }}
+        {{ include('profile/profileLeft.html.twig') }}
+        {{ include('profile/profileMain.html.twig') }}
+    </div>
+    {%  block subjavascript %}
+        {% if error == true %}
+            <script>
+                $('.btn-new-post').click();
+            </script>
+        {% endif %}
+    {% endblock %}
+{% endblock %}

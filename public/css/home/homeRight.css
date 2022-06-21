@@ -1,0 +1,109 @@
+.home-right{
+    border-radius: 1rem;
+    height: 40rem;
+    width: 21rem;
+    position: fixed;
+    transform: translateX(70.7rem);
+    box-shadow: 0 2px 6px grey;
+    -webkit-box-shadow: 0 2px 6px grey;
+    -moz-box-shadow: 0 2px 6px grey;
+}
+
+.header-right-block{
+    background-color: rgb(102, 167, 175);
+    width: 100%;
+    height: 4rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.title-right-block{
+    margin-top: 0.5rem;
+    margin-left: 0.7rem;
+    margin-right: 0.6rem;
+    display: inline-block;
+    font-size: 2rem;
+    color: white;
+}
+
+.search-friend-list{
+    display: inline-block;
+}
+
+#txt_search_box_in_friend_list{
+    text-align: center;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: rgb(240, 242, 245);
+}
+
+#txt_search_box_in_friend_list:focus-visible{
+    outline-color: rgb(40, 121, 116);
+}
+
+#btn-search-in-friend-list{
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 0.5rem;
+}
+#btn-search-in-friend-list:hover{
+    color: rgb(1, 86, 91);
+}
+
+.body-right-block{
+    background-color: rgba(197, 224, 231, .3);
+    height: 35rem;
+    width: 100%;
+    position: absolute;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.friend-in-list{
+    height: 4rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.friend-in-list:hover{
+    background-color: rgba(58, 59, 60, .2);
+    cursor: pointer;
+}
+
+.avatar-friend-in-list{
+    display: inline-block;
+}
+
+.avatar-friend-in-list img{
+    margin-left: -1rem;
+    border-radius: 2rem;
+    width: 3rem;
+    height: 3rem;
+}
+
+.avatar-friend-in-list,
+.name-friend-in-list{
+    transform: translateY(.6rem);
+    margin-left: 1rem;
+}
+
+.name-friend-in-list{
+    display: inline-block;
+    width: fit-content;
+    margin-left: 0.5rem;
+    font-weight: 600;
+}
+
+.status-friend-in-list{
+    float: right;
+    display: inline-block;
+    color: forestgreen;
+    transform: translateY(0.7rem);
+    margin-left: 1rem;
+    transform: translate(-12px, 19px);
+}
+
+
+
+
+
