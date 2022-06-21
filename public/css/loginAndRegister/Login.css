@@ -7,13 +7,7 @@ body{
   background-color: rgb(240, 242, 245);
 }
 
-.brand-text-login{
-  width: 12rem;
-  height: 12rem;
-  background-image: url(../../image/decorate/brand-text-login.png);
-  transform: translateY(5rem);
-  z-index: 0;
-}
+
 
 .register-form{
   display: none;
@@ -34,29 +28,17 @@ body{
 }
 
 .brand-logo{
-  background-image: url("../../image/decorate/bird-2.png");
-  width: 14rem;
-  height: 14rem;
+  width: 20rem;
+  height: 30rem;
   background-repeat: no-repeat;
   position: absolute;
-  background-size: 12rem 12rem;
+  background-size: 25rem 12rem;
   z-index: 1;
+  background-image: url("../../image/decorate/logo.png");
 }
 
-.animation-brand-logo{
-  animation-name: change-status-bird;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-delay: 1s;
-  /*animation-iteration-count: infinite;*/
-}
 
-@keyframes change-status-bird {
-  0% { background-image: url("../../image/decorate/bird-2.png");}
-  10% { background-image: url("../../image/decorate/logo2.png");}
-  90% { background-image: url("../../image/decorate/logo2.png");}
-  100% { background-image: url("../../image/decorate/logo.png");}
-}
+
 
 
 .title-login:hover{
