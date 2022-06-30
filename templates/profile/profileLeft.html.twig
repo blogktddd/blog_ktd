@@ -11,7 +11,7 @@
             <div class="user-name-profile">
                 <h4>{{ inforUser[0].fullname }}</h4>
             </div>
-            <div class="infor-profile-item" id="count_posts" data-user-id="{{ inforUser[0].id }}"><p>Pots: {{ inforUser[0].total_post }}</p></div>
+            <div class="infor-profile-item" id="count_posts" data-user-id="{{ inforUser[0].id }}"><p>Posts: {{ inforUser[0].total_post }}</p></div>
             <div class="infor-profile-item" id="count_friend" data-user-id="{{ inforUser[0].id }}"><p>Friends: {{ inforUser[0].total_friend }}</p></div>
         </div>
         {% if inforUser[0].id != app.user.id %}
