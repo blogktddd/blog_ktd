@@ -75,3 +75,31 @@
 #update_profile_form_gender #update_profile_form_gender_1:hover{
     cursor: pointer;
 }
+
+
+/*change pass*/
+
+.block-change-pass{
+    background-color: rgba(240, 242, 245);
+    width: 35rem;
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.btn-save-change-pass{
+    background-color: rgba(102, 167, 175);
+}
+
+.btn-save-change-pass:hover{
+    background-color: rgba(0, 56, 68);
+    color: white;
+    cursor: pointer;
+}
+
+.block-change-pass form input{
+    margin-bottom: 1rem;
+}

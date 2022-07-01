@@ -21,10 +21,19 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use App\Form\Type\changesPasswordFormType;
 
 
 class ProfileController extends AbstractController
 {
+    private $passwordHasher;
+
+    public function __construct(UserPasswordHasherInterface $passwordHasher)
+    {
+        $this->passwordHasher = $passwordHasher;
+    }
+
     /**
      * @Route("/profile/{userId}", name="app_profile", methods={"GET"})
      */
@@ -252,5 +261,58 @@ class ProfileController extends AbstractController
         }
         $request->request->replace($data);
         return $request;
+    }
+
+    /**
+     * @Route("/changePassword", name="change_password")
+     */
+    public function changePassword(Request $request,UserPasswordHasherInterface $hasher,UserRepository $userRepository,ManagerRegistry $managerRegistry): Response
+    {
+        $user=new user();        
+        $changePassword=$this->createForm(changesPasswordFormType::class,$user);
+        $changePassword->handleRequest($request);
+        $error = false;
+        $message = "";
+
+        if($changePassword->isSubmitted())
+        {
+            if($changePassword->isValid())
+            {
+                $password = $this->getUser();
+                $oldPassword = $request->request->get('password');
+                $newPassword = $request->request->get('newPassword');
+                $confirmPassword = $request->request->get('confirmPassword');
+
+                if ($hasher->isPasswordValid($password, $oldPassword))
+                {
+                    if ($newPassword == $confirmPassword)
+                    {
+                        $User = $userRepository->find($this->getUser()->getId());
+                        $User->setPassword($this->passwordHasher->HashPassword($user, $newPassword));
+                        $database = $managerRegistry->getManager();
+                        $database->persist($User);
+                        $database->flush();
+                        $message = 'Change Password is success';
+                    }
+                }
+                else
+                {
+                    $error = true;
+                    $message = 'Incorrect Current Password ';
+                }
+
+            }
+            else
+            {
+                $error = true;
+                $message = 'invalid Password';
+            }
+        }
+
+        return $this->render('profile/changePassword.html.twig', [
+            'error' => $error,
+            'message' => $message,
+            'changes_password' => $changePassword->createView()
+        ]);
     }
 }
