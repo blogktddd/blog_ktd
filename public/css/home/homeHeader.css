@@ -1,4 +1,5 @@
 *{
+    color: black;
     margin: 0;
     padding: 0;
     font-family: inherit;
@@ -72,7 +73,7 @@
 
 .icon-nav-header{
     font-size: 2rem;
-    color: white;
+    color: black;
 }
 
 .count-notification-post, .count-notification-friend{
