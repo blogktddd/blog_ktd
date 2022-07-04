@@ -71,7 +71,6 @@ body{
 }
 
 .login {
-  border-radius:  1rem;
   position: relative;
   height: 30rem;
   width: 28rem;
@@ -79,7 +78,7 @@ body{
   top:3rem;
   right: 3rem;
   padding: 60px 60px;
-  background-color: rgb(71, 167, 175);
+  background-color: #7ed957;
   color: white;
   box-shadow: 0 0 1rem rgb(0,66,67);
 }
