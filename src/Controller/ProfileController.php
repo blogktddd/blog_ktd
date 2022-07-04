@@ -305,7 +305,7 @@ class ProfileController extends AbstractController
             else
             {
                 $error = true;
-                $message = 'invalid Password';
+                $message = 'Invalid Password';
             }
         }
 
