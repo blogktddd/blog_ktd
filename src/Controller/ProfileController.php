@@ -282,7 +282,7 @@ class ProfileController extends AbstractController
         $likeAndCommentDetail = $notificationRepository->getCommentAndLikeDetailFromOtherUser($this->getUser()->getId());
         $inviteFriendDetail = $notificationRepository->getInviteFriendDetail($this->getUser()->getId());
     
-        $user=new user();        
+        $user=new user();
         $changePassword=$this->createForm(changesPasswordFormType::class,$user);
         $changePassword->handleRequest($request);
         $error = false;
@@ -308,6 +308,11 @@ class ProfileController extends AbstractController
                         $database->flush();
                         $message = 'Change Password is success';
                     }
+                    else
+                    {
+                        $error = true;
+                        $message = 'Confirm password not match!';
+                    }
                 }
                 else
                 {
@@ -319,7 +324,7 @@ class ProfileController extends AbstractController
             else
             {
                 $error = true;
-                $message = 'Invalid Password';
+                $message = 'invalid Password';
             }
         }
 
