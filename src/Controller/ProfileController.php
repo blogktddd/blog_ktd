@@ -266,8 +266,22 @@ class ProfileController extends AbstractController
     /**
      * @Route("/changePassword", name="change_password")
      */
-    public function changePassword(Request $request,UserPasswordHasherInterface $hasher,UserRepository $userRepository,ManagerRegistry $managerRegistry): Response
+    public function changePassword(NotificationRepository $notificationRepository,RelationshipRepository $relationshipRepository,Request $request,UserPasswordHasherInterface $hasher,UserRepository $userRepository,ManagerRegistry $managerRegistry): Response
     {
+        $inforNavBar = $userRepository->getUserInforNavBar($this->getUser()->getId());
+
+        //get total notification of like and comment
+        $liekNotification = $notificationRepository->getLikeFromOtherUser($this->getUser()->getId());
+        $commentNotification = $notificationRepository->getCommentFromOtherUser($this->getUser()->getId());
+        $totalLikeAndCommentNotification = $liekNotification[0]['total_like'] + $commentNotification[0]['total_comment'];
+
+        //get notification of invite friend
+        $inviteFriend = $notificationRepository->getInvitefriend($this->getUser()->getId());
+
+        //get detail notification
+        $likeAndCommentDetail = $notificationRepository->getCommentAndLikeDetailFromOtherUser($this->getUser()->getId());
+        $inviteFriendDetail = $notificationRepository->getInviteFriendDetail($this->getUser()->getId());
+    
         $user=new user();        
         $changePassword=$this->createForm(changesPasswordFormType::class,$user);
         $changePassword->handleRequest($request);
@@ -312,7 +326,12 @@ class ProfileController extends AbstractController
         return $this->render('profile/changePassword.html.twig', [
             'error' => $error,
             'message' => $message,
-            'changes_password' => $changePassword->createView()
+            'changes_password' => $changePassword->createView(),
+            'inforNavBar' => $inforNavBar,
+            'countlikeAndComment' => $totalLikeAndCommentNotification,
+            'countInviteFriend' => $inviteFriend,
+            'likeAndCommentDetail' => $likeAndCommentDetail,
+            'inviteFriendDetail' => $inviteFriendDetail
         ]);
     }
 }

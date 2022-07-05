@@ -79,7 +79,15 @@
 
 /*change pass*/
 
+.title-change-password {
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: initial;
+    margin-bottom: 1rem;
+}
+
 .block-change-pass{
+    transform: translateY(3rem);
     background-color: rgba(240, 242, 245);
     width: 35rem;
     padding: 2rem;
