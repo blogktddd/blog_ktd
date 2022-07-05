@@ -146,7 +146,7 @@
 .btn-new-post:hover{
     cursor: pointer;
     background-color: black;
-    color: white;
+    color: white!important;
 }
 
 .btn-new-post p{
