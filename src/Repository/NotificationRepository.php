@@ -38,7 +38,7 @@ class NotificationRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-    #this function will count all the like of other user who was react the current user's post
+    #This function will count all the like of other user who was react the current user's post
     public function getLikeFromOtherUser($user_id)
     {
         $conn=$this->getEntityManager()->getConnection();
@@ -50,7 +50,7 @@ class NotificationRepository extends ServiceEntityRepository
 
         return $resultSet->fetchAllAssociative();
     }
-     #this function will count all the comment of other user who was react the current user's post
+     #This function will count all the comment of other user who was react the current user's post
     public function getCommentFromOtherUser($user_id)
     {
         $conn=$this->getEntityManager()->getConnection();
@@ -60,7 +60,7 @@ class NotificationRepository extends ServiceEntityRepository
         return $resultSet->fetchAllAssociative();
     }
 
-    // get who has like or comment
+    // Get who has like or comment
     public function getCommentAndLikeDetailFromOtherUser($user_id)
     {
         $conn=$this->getEntityManager()->getConnection();
@@ -74,7 +74,7 @@ class NotificationRepository extends ServiceEntityRepository
     }
 
 
-    #count all invite friend request for current user
+    #Count all invite friend request for current user
     public function getInvitefriend($user_id)
     {
         $conn=$this->getEntityManager()->getConnection();
@@ -89,7 +89,7 @@ class NotificationRepository extends ServiceEntityRepository
 
         return $resultSet->fetchAllAssociative();
     }
-// get name who want to be friend with current user
+// Get name who want to be friend with current user
     public function getInviteFriendDetail($user_id)
     {
         $conn=$this->getEntityManager()->getConnection();
@@ -100,7 +100,7 @@ class NotificationRepository extends ServiceEntityRepository
 
         return $resultSet->fetchAllAssociative();
     }
-    // update all seen become "yes" where the user click to see the notification of like and comment
+    // Update all seen become "yes" where the user click to see the notification of like and comment
     public function updateSeenStatusNotification($user_id)
     {
         $conn=$this->getEntityManager()->getConnection();
@@ -109,7 +109,7 @@ class NotificationRepository extends ServiceEntityRepository
         $resultSet=$stmt->executeQuery(['user_id'=>$user_id]);
         return $resultSet;
     }
-    // update all seen become "yes" where the user click to see the notification of friend
+    // Update all seen become "yes" where the user click to see the notification of friend
     public function updateSeenStatusNotificationOfFriend($user_id)
     {
         $conn=$this->getEntityManager()->getConnection();

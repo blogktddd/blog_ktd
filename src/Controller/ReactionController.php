@@ -57,19 +57,19 @@ class ReactionController extends AbstractController
     }
     function saveLike($reaction, $database, $post, $postRepository, $idPostWantLike, $userRepository)
     {
-        //save like
+        // Save like
         $reaction->setUser($this->getUser());
         $reaction->setPost($post);
 
         $database->persist($reaction);
         $database->flush();
 
-        //save total like
+        // Save total like
         $post->setTotalLike($post->getTotalLike() + 1);
         $database->persist($reaction);
         $database->flush();
 
-        //save notificacation
+        // Save notificacation
         $receiverId = $postRepository->getUserIdFromAPost($idPostWantLike);
         $receiver = $userRepository->find($receiverId[0]['id']);
 
@@ -171,7 +171,7 @@ class ReactionController extends AbstractController
         $database->flush();
     }
 
-    //tranform data when request by PUT method
+    // Tranform data when request by PUT method
     public function tranform($request)
     {
         $data = json_decode($request->getContent(), true);

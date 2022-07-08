@@ -40,7 +40,7 @@ class PostRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-    #get all friend's post and don't over 3 days 
+    #Get all friend's post and don't over 3 days 
     public function getPost($user_id)
     {
         $conn=$this->getEntityManager()->getConnection();
@@ -66,7 +66,7 @@ class PostRepository extends ServiceEntityRepository
         $resultSet=$stmt->executeQuery(['user_id'=>$user_id]);
         return $resultSet->fetchAllAssociative();
     }
-    // use post_id to get user_id 
+    // Use post_id to get user_id 
     public function getUserIdFromAPost($post_id)
     {
         $conn=$this->getEntityManager()->getConnection();

@@ -89,7 +89,7 @@ class PostController extends AbstractController
 
             $post->setCaption($caption);
 
-            //save data
+            //Save data
             $database = $managerRegistry->getManager();
             $database->persist($post);
             $database->flush();
@@ -107,11 +107,11 @@ class PostController extends AbstractController
      */
     public function deletePostAction(Request $request, UserRepository $userRepository, PostRepository $postRepository, ManagerRegistry $managerRegistry)
     {
-        //get data from request
+        //Get data from request
         $request = $this->tranform($request);
         $idPost = $request->get('idPost');
 
-        //get avatar user
+        //Get avatar user
         $userId = $postRepository->getUserIdFromAPost($idPost);
         $user = $userRepository->find($userId[0]['id']);
 
@@ -119,7 +119,7 @@ class PostController extends AbstractController
 
         if($post)
         {
-            //avoid delete avatar
+            //Avoid delete avatar
             if($post->getImage() != null && $post->getImage() != $user->getAvatar())
             {
                 unlink('image/post/'.$post->getImage());

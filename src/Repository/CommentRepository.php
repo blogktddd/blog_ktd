@@ -39,7 +39,7 @@ class CommentRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-    // the function will be return ten first comment if number is 0. and you should increase that ten units when user click show more
+    // This function will be return ten first comment if number is 0. and you should increase that ten units when user click show more
     
     public function getFullComment()
     {

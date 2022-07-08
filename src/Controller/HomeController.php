@@ -41,28 +41,28 @@ class HomeController extends AbstractController
      */
     public function index(ReactionRepository $reactionRepository, CommentRepository $commentRepository, UserRepository $userRepository, PostRepository $postRepository, RelationshipRepository $relationshipRepository, NotificationRepository $notificationRepository)
     {
-        //get avatar header
+        //Get avatar header
         $inforNavBar = $userRepository->getUserInforNavBar($this->getUser()->getId());
 
-        //get total notification of like and comment
+        //Get total notification of like and comment
         $liekNotification = $notificationRepository->getLikeFromOtherUser($this->getUser()->getId());
         $commentNotification = $notificationRepository->getCommentFromOtherUser($this->getUser()->getId());
         $totalLikeAndCommentNotification = $liekNotification[0]['total_like'] + $commentNotification[0]['total_comment'];
 
-        //get notification of invite friend
+        //Get notification of invite friend
         $inviteFriend = $notificationRepository->getInvitefriend($this->getUser()->getId());
 
-        //get detail notification
+        //Get detail notification
         $likeAndCommentDetail = $notificationRepository->getCommentAndLikeDetailFromOtherUser($this->getUser()->getId());
         $inviteFriendDetail = $notificationRepository->getInviteFriendDetail($this->getUser()->getId());
-        //get friend list
+        //Get friend list
         $friendList = $relationshipRepository->getFriendList($this->getUser()->getId());
 
-        //get post and data user
+        //Get post and data user
         $post = $postRepository->getPost($this->getUser()->getId());
         $postLiked = $reactionRepository->checklike($this->getUser()->getId());
         $userInfor = $userRepository->getProfile($this->getUser()->getId());
-        //get comment
+        //Get comment
         $comments = $commentRepository->getFullComment();
 
         return $this->render('home/homeIndex.html.twig',[

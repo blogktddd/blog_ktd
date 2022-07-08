@@ -206,14 +206,14 @@ class ProfileController extends AbstractController
         $safeFileImg = uniqid().$imgFile['name'];
         copy($imgFile['tmp_name'], "image/post/".$safeFileImg);
 
-        //get user data
+        //Set user data
         $userId = $this->getUser()->getId();
         $user = $userRepository->find($userId);
 
-        //set data for user
+        //Set data for user
         $user->setAvatar($safeFileImg);
 
-        //save infor user
+        //Save infor user
         $database = $managerRegistry->getManager();
         $database->persist($user);
         $database->flush($user);
@@ -270,15 +270,15 @@ class ProfileController extends AbstractController
     {
         $inforNavBar = $userRepository->getUserInforNavBar($this->getUser()->getId());
 
-        //get total notification of like and comment
+        //Get total notification of like and comment
         $liekNotification = $notificationRepository->getLikeFromOtherUser($this->getUser()->getId());
         $commentNotification = $notificationRepository->getCommentFromOtherUser($this->getUser()->getId());
         $totalLikeAndCommentNotification = $liekNotification[0]['total_like'] + $commentNotification[0]['total_comment'];
 
-        //get notification of invite friend
+        //Get notification of invite friend
         $inviteFriend = $notificationRepository->getInvitefriend($this->getUser()->getId());
 
-        //get detail notification
+        //Get detail notification
         $likeAndCommentDetail = $notificationRepository->getCommentAndLikeDetailFromOtherUser($this->getUser()->getId());
         $inviteFriendDetail = $notificationRepository->getInviteFriendDetail($this->getUser()->getId());
     
