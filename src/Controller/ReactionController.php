@@ -135,12 +135,12 @@ class ReactionController extends AbstractController
                 'fullname' => $FullnameUser->getFullname(),
                 'content' => $content,
                 'dateTime' => new \DateTime(),
-                'Message' => 'Success send comment to post id: '.$postId
+                'Message' => 'Successfully to send comment to post id: '.$postId
             ]);
         }
         else
         {
-            return new JsonResponse(['status_code' => 400, 'Message' => 'Fail send comment to post id: '.$postId]);
+            return new JsonResponse(['status_code' => 400, 'Message' => 'Failed to send comment to post id: '.$postId]);
         }
 
     }

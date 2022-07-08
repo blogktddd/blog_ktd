@@ -243,12 +243,12 @@ class ProfileController extends AbstractController
         {
             if(!($imgFile["type"] =="image/jpg" || $imgFile['type'] == "image/jpeg" || $imgFile['type'] == "image/png"))
             {
-                  $error = 'Only accept image';
+                  $error = 'Only accept .jpg, .jpeg and .png file.';
             }
         }
         else if($imgFile['name'] != '' && $caption == '')
         {
-            $error = 'content is empty';
+            $error = 'Content must not be empty.';
         }
 
         return $error;

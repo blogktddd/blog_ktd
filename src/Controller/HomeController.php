@@ -98,7 +98,7 @@ class HomeController extends AbstractController
         }
         else
         {
-            return new JsonResponse(['status_code' => 400, 'Message' => 'Not found user with name: '.$userFullname]);
+            return new JsonResponse(['status_code' => 400, 'Message' => 'Cannot found user with name: '.$userFullname]);
         }
     }
 

@@ -137,7 +137,7 @@ class PostController extends AbstractController
         {
             return new JsonResponse([
                 'status_code' => 400,
-                'Message' => 'Not found post with id: '.$idPost
+                'Message' => 'Cannot found the post with id: '.$idPost
             ]);
         }
 
@@ -164,7 +164,7 @@ class PostController extends AbstractController
         {
             return new JsonResponse([
                 'status_code' => 400,
-                'Message' => 'Not found post with id: '.$idPost
+                'Message' => 'Cannot found post with id: '.$idPost
             ]);
         }
 
@@ -187,12 +187,12 @@ class PostController extends AbstractController
         {
             if(!($imgFile["type"] =="image/jpg" || $imgFile['type'] == "image/jpeg" || $imgFile['type'] == "image/png"))
             {
-                $error = 'Only accept image';
+                $error = 'Only accept .jpg, .jpeg and .png file.';
             }
         }
         else if($imgFile['name'] != '' && $caption == '')
         {
-            $error = 'content is empty';
+            $error = 'Content must not be empty.';
         }
 
         return $error;
