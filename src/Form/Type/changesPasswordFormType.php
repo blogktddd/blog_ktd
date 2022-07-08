@@ -25,7 +25,7 @@ class changesPasswordFormType extends AbstractType
         ])
         ->add('new_password',RepeatedType::class, [
             'type' => PasswordType::class,
-            'invalid_message' => 'The password fields must match.',
+            'invalid_message' => 'The password fields must be match.',
             'options' => ['attr' => ['class' => 'infor-item']],
             'required' => false,
             'first_options' =>['label' => 'New Password','attr'=>[ 'class' => 'infor-item']],

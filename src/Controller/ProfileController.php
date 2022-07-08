@@ -306,25 +306,25 @@ class ProfileController extends AbstractController
                         $database = $managerRegistry->getManager();
                         $database->persist($User);
                         $database->flush();
-                        $message = 'Change Password is success';
+                        $message = 'Change password successfully!';
                     }
                     else
                     {
                         $error = true;
-                        $message = 'Confirm password not match!';
+                        $message = 'Confirm password does not match!';
                     }
                 }
                 else
                 {
                     $error = true;
-                    $message = 'Incorrect Current Password ';
+                    $message = 'Incorrect current password!';
                 }
 
             }
             else
             {
                 $error = true;
-                $message = 'invalid Password';
+                $message = 'Invalid password';
             }
         }
 

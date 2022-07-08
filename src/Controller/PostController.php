@@ -96,7 +96,7 @@ class PostController extends AbstractController
 
             return new JsonResponse([
                 'status_code' => 200,
-                'Message' => 'update post success with id: '.$post->getId(),
+                'Message' => 'Update post successfully with id: '.$post->getId(),
                 'userId' => $this->getUser()->getId()
             ]);
         }
@@ -164,7 +164,7 @@ class PostController extends AbstractController
         {
             return new JsonResponse([
                 'status_code' => 400,
-                'Message' => 'Cannot found post with id: '.$idPost
+                'Message' => 'Cannot found the post with id: '.$idPost
             ]);
         }
 
