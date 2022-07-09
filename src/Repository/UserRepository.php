@@ -56,7 +56,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->add($user, true);
     }
 
-    // get profile of current user
+    // Get profile of current user
     public function getProfile($user_id)
     {
         $conn=$this->getEntityManager()->getConnection();

@@ -30,8 +30,8 @@ class updateProfileFormType extends AbstractType
         ->add('gender', ChoiceType::class, [ 'attr' => ['id' => 'radio_button'],
                 'choices' =>
                     [
-                        'Male' => 'male',
-                        'Female' => 'female'
+                        'Male' => 'Male',
+                        'Female' => 'Female'
                     ],
                 'expanded' => true
             ])

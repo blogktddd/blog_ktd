@@ -29,8 +29,8 @@
                 ->add('gender', ChoiceType::class, [
                     'choices' =>
                     [
-                        'Male' => 'male',
-                        'Female' => 'female'
+                        'Male' => 'Male',
+                        'Female' => 'Female'
                     ],
                     'expanded' => true
                 ])
