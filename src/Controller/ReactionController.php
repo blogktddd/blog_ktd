@@ -171,5 +171,14 @@ class ReactionController extends AbstractController
         $database->flush();
     }
 
-   
+    // Tranform data when request by PUT method
+    public function tranform($request)
+    {
+        $data = json_decode($request->getContent(), true);
+        if($data === null){
+            return $request;
+        }
+        $request->request->replace($data);
+        return $request;
+    }
 }
