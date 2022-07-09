@@ -146,7 +146,7 @@ $(document).ready(function (){
 
         if(caption == '' && image.length === 0)
         {
-            $('#error_up_edit_post').html('please enter caption or choose image');
+            $('#error_up_edit_post').html('Please enter caption or choose image');
             e.preventDefault();
         }
         else
@@ -175,41 +175,4 @@ $(document).ready(function (){
             })
         }
     });
-
-    var reportPostId = '';
-    //send report
-    $('.report-option-post-profile').click(function (){
-        reportPostId = $(this).data('post-id');
-    })
-    $('#report_post_form').submit(function (e){
-        var captionReport = $('#report_caption').val();
-
-        if(captionReport == '')
-        {
-            e.preventDefault();
-            $('#error_report_post').html('Write something!');
-        }
-        else
-        {
-            e.preventDefault();
-            $.ajax({
-                type:'PUT',
-                url: $(this).attr('action'),
-                data:{'captionReport':captionReport, 'reportPostId':reportPostId},
-                success: function (data){
-                    if(data['status_code'] == 200)
-                    {
-                        $('#report_caption').val('');
-                        $('#btn_close_table_report_post').click();
-                    }
-                    else
-                    {
-                        $('#error_report_post').html(data['Message'])
-                    }
-
-                }
-            })
-        }
-    })
-
 })

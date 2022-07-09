@@ -111,3 +111,12 @@
 .block-change-pass form input{
     margin-bottom: 1rem;
 }
+
+.form-update-infor form div ul{
+    display: none!important;
+}
+
+.erro-mess-update-infor-profile {
+    text-align: center;
+    color: red;
+}

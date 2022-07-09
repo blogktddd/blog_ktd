@@ -47,7 +47,7 @@ $(document).ready(function (){
 
         if(image === 0)
         {
-            $('#error_change_avatar').html('please choose avatar');
+            $('#error_change_avatar').html('Please choose avatar');
             console.log('click')
             e.preventDefault();
         }

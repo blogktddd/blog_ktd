@@ -23,7 +23,9 @@ use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use App\Form\Type\changesPasswordFormType;
+use DateTimeZone;
 
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 class ProfileController extends AbstractController
 {
@@ -136,12 +138,12 @@ class ProfileController extends AbstractController
         {
             if($formUpdateInfor->isValid())
             {
-                $user = $userRepository->find($this->getUser()->getId());
+                $user = $this-> getUser();
                 $dataInforUpdate = $formUpdateInfor->getData();
 
-                $user->setUsername($this->getUser()->getUsername());
-                $user->setPassword($this->getUser()->getPassword());
+                
                 $user->setFullname($dataInforUpdate->getFullname());
+                $user->setGender($dataInforUpdate->getGender());
                 $user->setEmail($dataInforUpdate->getEmail());
                 $user->setPhone($dataInforUpdate->getPhone());
                 $user->setAddress($dataInforUpdate->getAddress());
@@ -207,7 +209,7 @@ class ProfileController extends AbstractController
         copy($imgFile['tmp_name'], "image/post/".$safeFileImg);
 
         //Set user data
-        $userId = $this->getUser()->getId();
+        $userId = $this->getUser();
         $user = $userRepository->find($userId);
 
         //Set data for user
@@ -299,9 +301,9 @@ class ProfileController extends AbstractController
 
                 if ($hasher->isPasswordValid($password, $oldPassword))
                 {
-                    if ($newPassword == $confirmPassword)
+                    if ($newPassword == $confirmPassword && $newPassword != '')
                     {
-                        $User = $userRepository->find($this->getUser()->getId());
+                        $User = $this->getUser();
                         $User->setPassword($this->passwordHasher->HashPassword($user, $newPassword));
                         $database = $managerRegistry->getManager();
                         $database->persist($User);

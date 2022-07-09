@@ -27,12 +27,6 @@
                                 Edit<i class="bi-pencil-fill"></i>
                             </li>
                             <button type="button" class="item-option-post-home" id="edit_option_post_profile" data-post-id="{{ post['id'] }}" data-bs-toggle="modal" data-bs-target="#edit_post_model" hidden></button>
-                        {% else %}
-                            <li class="dropdown-item report-option-post-profile" data-post-id="{{ post['id'] }}">
-                                <button type="button" class="item-option-post-home report-option-post-profile" data-post-id="{{ post['id'] }}" data-bs-toggle="modal" data-bs-target="#report_post_model" >
-                                    Report <i class="bi-lightning-fill"></i>
-                                </button>
-                            </li>
                         {% endif %}
                     </ul>
                 </div>
