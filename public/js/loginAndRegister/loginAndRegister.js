@@ -25,7 +25,7 @@ $(document).ready(function () {
         if(pass != passConfirm)
         {
             e.preventDefault();
-            $('#error_register_form').html('Confirm pass not match');
+            $('#error_register_form').html('Confirm password does not match!');
         }
     })
 

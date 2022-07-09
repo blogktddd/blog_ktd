@@ -2,14 +2,6 @@ $(document).ready(function ()
 {
     console.log("ready");
 
-    //change logo status
-    $('.brand').mouseenter(function (){
-        $("#logo").attr('src', '/image/decorate/logo2.png');
-    });
-    $('.brand').mouseleave(function (){
-        $("#logo").attr('src', '/image/decorate/logo.png');
-    });
-
 
     $('#post_notification').click(function (){
 
