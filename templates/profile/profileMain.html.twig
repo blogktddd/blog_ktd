@@ -60,7 +60,7 @@
                     <div class="avatar-post-home">
                         <img src="{{ asset( image_dir ~ inforNavBar[0].avatar ) }}" alt="avatar">
                     </div>
-                    <input type="text" class="txt_comment_post_home" data-post-id="{{ post['id'] }}" id="txt_comment_post_home_{{ post['id'] }}" placeholder="  comment...">
+                    <input type="text" class="txt_comment_post_home" data-post-id="{{ post['id'] }}" id="txt_comment_post_home_{{ post['id'] }}" placeholder="Comment...">
                     <div class="btn-send-comment-post" data-btn-send-comment-id="{{ post['id'] }}" ><i class="bi-send-fill"></i></div>
                 </div>
                 {% for comment in comments %}
