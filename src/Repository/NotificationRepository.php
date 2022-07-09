@@ -100,7 +100,15 @@ class NotificationRepository extends ServiceEntityRepository
 
         return $resultSet->fetchAllAssociative();
     }
-   
+    // Update all seen become "yes" where the user click to see the notification of like and comment
+    public function updateSeenStatusNotification($user_id)
+    {
+        $conn=$this->getEntityManager()->getConnection();
+        $query ="UPDATE notification as n SET n.seen='yes' WHERE n.receiver_id=:user_id AND (n.type='comment' OR n.type='like')";
+        $stmt=$conn->prepare($query);
+        $resultSet=$stmt->executeQuery(['user_id'=>$user_id]);
+        return $resultSet;
+    }
     // Update all seen become "yes" where the user click to see the notification of friend
     public function updateSeenStatusNotificationOfFriend($user_id)
     {
