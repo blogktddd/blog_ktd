@@ -4,7 +4,7 @@
 }
 
 body{
-  background-color: rgb(240, 242, 245);
+  background-color: rgb(230, 236, 245);
 }
 
 
@@ -52,7 +52,7 @@ body{
 
 .signin {
   font-family: 'Montserrat', sans-serif;
-  color: #fff;
+  color: rgb(251, 239, 239);
   font-size: 14px;
   letter-spacing: 1px;
 }
@@ -67,7 +67,7 @@ body{
 }
 .nonactive:hover
 {
-  border-bottom: 2px solid #1161ed;
+  border-bottom: 2px solid #0a5eef;
 }
 
 .login {
