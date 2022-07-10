@@ -2,7 +2,7 @@
     width: 71rem;
     min-height: 50rem;
     padding-top: 5rem;
-    background-color: rgb(240, 242, 245);
+    background-color: rgb(203, 213, 229);
     margin-right: auto;
     margin-left: auto;
 }
@@ -11,17 +11,17 @@
     float: right;
     width: 40rem;
     min-height: 50rem;
-    background-color: rgb(240, 242, 245);
+    background-color: rgb(226, 234, 245);
     display: block;
 }
 
 .header-post-profile{
     width: 40rem;
     height: 5rem;
-    background-color: white;
+    background-color: rgb(246, 235, 235);
     border-radius: 1rem;
     margin-bottom: 1rem;
-    box-shadow: 0 2px 6px grey;
+    box-shadow: 0 2px 6px rgb(128, 128, 128);
 }
 
 
