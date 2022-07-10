@@ -63,6 +63,6 @@
 }
 
 #btn_search_user:hover{
-    background-color: rgba(58, 59, 60, .2);
+    background-color: rgba(47, 48, 49, 0.2);
     cursor: pointer;
 }
