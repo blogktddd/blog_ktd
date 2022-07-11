@@ -51,7 +51,6 @@ $(document).ready(function ()
             success:function (data){
                 if(data['status_code'] == 200)
                 {
-                    console.log(data['userList'].length);
                     showUserList(data['userList']);
                 }
                 else
