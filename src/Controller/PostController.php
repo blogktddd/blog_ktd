@@ -190,7 +190,7 @@ class PostController extends AbstractController
                 $error = 'Only accept .jpg, .jpeg and .png file.';
             }
         }
-        else if($imgFile['name'] != '' && $caption == '')
+        else if($imgFile['name'] == '' && $caption == '')
         {
             $error = 'Content must not be empty.';
         }
