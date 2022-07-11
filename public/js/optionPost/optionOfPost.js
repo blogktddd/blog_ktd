@@ -146,7 +146,7 @@ $(document).ready(function (){
 
         if(caption == '' && image.length === 0)
         {
-            $('#error_up_edit_post').html('Please enter caption or choose image');
+            $('#error_up_edit_post').html('Please enter caption or choose image!');
             e.preventDefault();
         }
         else
