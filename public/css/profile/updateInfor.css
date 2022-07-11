@@ -99,12 +99,12 @@
 }
 
 .btn-save-change-pass{
-    background-color: rgba(102, 167, 175);
+    background-color: rgb(97, 167, 176);
 }
 
 .btn-save-change-pass:hover{
-    background-color: rgba(0, 56, 68);
-    color: white;
+    background-color: rgb(1, 44, 54);
+    color: rgb(240, 225, 225);
     cursor: pointer;
 }
 
