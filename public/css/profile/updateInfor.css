@@ -55,7 +55,7 @@
 
 #update_profile_form_save:hover{
     background-color: rgb(0, 56, 68);
-    color: white;
+    color: rgb(245, 235, 235);
 }
 
 #update_profile_form_gender label{
@@ -88,7 +88,7 @@
 
 .block-change-pass{
     transform: translateY(3rem);
-    background-color: rgba(240, 242, 245);
+    background-color: rgb(228, 231, 236);
     width: 35rem;
     padding: 2rem;
     margin-left: auto;
