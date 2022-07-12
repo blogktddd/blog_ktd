@@ -103,14 +103,14 @@ h2:first-child {
   padding-left: 0;
 }
 .text {
-  color: rgb(1, 1, 1)!important;
+  color: rgb(5, 5, 5)!important;
   border: none;
-  width: 89%;
+  width: 90%;
   padding: 10px 20px;
   display: block;
   height: 15px;
   border-radius: 20px;
-  background: rgb(215, 225, 231);
+  background: rgba(215, 225, 231, 0.882);
   overflow: hidden;
   margin-top: 15px;
   transition: all 0.5s ease-in-out;
@@ -118,7 +118,7 @@ h2:first-child {
 
 .text:focus {
   outline: 0;
-  border: 2px solid rgba(242, 238, 238, 0.5);
+  border: 2px solid rgba(242, 238, 238, 0.426);
   border-radius: 20px;
   background: rgba(0, 56, 68, 1);
   color: white!important;
