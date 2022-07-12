@@ -14,11 +14,11 @@
 .img-post-in-table{
     width: 30rem;
     height: 30rem;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.94);
     display: inline-block;
     vertical-align: top;
     border-radius: 1rem;
-    border: 2px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.94);
     text-align: center;
 }
 
