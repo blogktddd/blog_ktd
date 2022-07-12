@@ -67,20 +67,20 @@ body{
 }
 .nonactive:hover
 {
-  border-bottom: 2px solid #0a5eefe0;
+  border-bottom: 2px solid #095cebe0;
 }
 
 .login {
   position: relative;
   height: 30rem;
-  width: 28rem;
+  width: 30rem;
   float: right;
   top:3rem;
   right: 3rem;
   padding: 60px 60px;
   background-color: #7ed957;
   color: white;
-  box-shadow: 0 0 1rem rgb(0,66,67);
+  box-shadow: 0 0 1rem rgb(2, 76, 77);
 }
 
 form {
