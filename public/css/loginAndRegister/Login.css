@@ -120,8 +120,8 @@ h2:first-child {
   outline: 0;
   border: 2px solid rgba(242, 238, 238, 0.426);
   border-radius: 20px;
-  background: rgba(0, 56, 68, 1);
-  color: white!important;
+  background: rgb(1, 51, 62);
+  color: rgba(255, 255, 255, 0.929)!important;
 }
 
 
@@ -129,7 +129,7 @@ h2:first-child {
 input[type="text"],
 input[type="password"] {
   font-family: 'Montserrat', sans-serif;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.885);
 }
 
 
